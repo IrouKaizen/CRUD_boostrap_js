@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!--Bootstrap 5 icons CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <title> Gestion de l’inventaire </title>
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+        <div class="search"> <br>
+          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="d-flex" role="search">
+                    <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+              </div>
+
+              <div class="butt">
+                <button class="btn btn-primary newUser" data-bs-toggle="modal" data-bs-target="#userForm"><i class="bi bi-plus-lg"></i> Ajouter</button>
+                <button type="button" class="btn btn-warning"> <i class="bi bi-arrow-clockwise"></i> Actualiser</button>
+                </div>
+
+            </div>
+          </nav>
+        </div>
+
+<br>
+
+<hr>
+
+    <section class="p-3">
+
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped table-hover mt-3 text-center table-bordered">
+
+                    <thead>
+                        <tr>
+                            <th>Nom Employeur</th>
+                            <th>Absence</th>
+                            <th>Statut</th>
+                            <th>De garde</th>
+                            <th>Paye</th>
+                            <th>Présence</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="data"></tbody>
+
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!--Modal Form-->
+    <div class="modal fade" id="userForm">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Remplissez</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <form action="#" id="myForm">
+
+                        <div class="inputField">
+                            <div>
+                                <label for="name">nomEmployeur:</label>
+                                <input type="text" name="" id="name" required>
+                            </div>
+                            <div>
+                                <label for="age">Absence:</label>
+                                <input type="number" name="" id="age" required>
+                            </div>
+                            <div>
+                                <label for="city">statut:</label>
+                                <input type="text" name="" id="city" required>
+                            </div>
+                            <div>
+                                <label for="garde">De garde :</label>
+                                <input type="text" name="" id="email" required>
+                            </div>
+                            <div>
+                                <label for="paye">Paye:</label>
+                                <input type="text" name="" id="email" required>
+                            </div>
+                            <div>
+                                <label for="phone">Présence :</label>
+                                <input type="date" name="" id="phone" minlength="11" maxlength="11" required>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" form="myForm" class="btn btn-primary submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Read Data Modal-->
+    <div class="modal fade" id="readData">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Profile</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <form action="#" id="myForm">
+
+                        <div class="inputField">
+                            <div>
+                                <label for="name">nomEmployeur:</label>
+                                <input type="text" name="" id="showName" disabled>
+                            </div>
+                            <div>
+                                <label for="age">Absence:</label>
+                                <input type="number" name="" id="showAge" disabled>
+                            </div>
+                            <div>
+                                <label for="city">Statut:</label>
+                                <input type="text" name="" id="showCity" disabled>
+                            </div>
+                            <div>
+                                <label for="garde">De garde:</label>
+                                <input type="text" name="" id="showEmail" disabled>
+                            </div>
+                            <div>
+                                <label for="paye">Paye:</label>
+                                <input type="text" name="" id="showEmail" disabled>
+                            </div>
+                            <div>
+                                <label for="phone">Présence:</label>
+                                <input type="number" name="" id="showPhone" minlength="11" maxlength="11" disabled>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
